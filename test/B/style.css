@@ -1,0 +1,10 @@
+.container{
+    width:500px;
+    text-align: center;
+    margin:0 auto;
+    padding-top: 100px;
+}
+h1{
+    color:white;
+    background-color: black;
+}
