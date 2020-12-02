@@ -1,0 +1,25 @@
+.user-container img{
+    min-width: 40vw;
+    
+}
+.user-container{
+    text-align: center;
+    position:relative;
+    width:max-content;
+    margin:auto;
+
+}
+.previous, .next{
+    position:absolute;
+    font-size:40px;
+    top:50%;
+    cursor:pointer;
+    font-size:60px;
+}
+.previous{
+    left:5px;
+}
+.next{
+    right:5px;
+}
+
