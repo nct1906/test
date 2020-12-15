@@ -44,7 +44,7 @@ export class RegisterScreen extends HTMLElement{
             <input-wrapper type="text" id="last-name" placeholder="Last Name">
             </input-wrapper>
             
-            <input-wrapper type="text" id="email" placeholder="Email">
+            <input-wrapper type="email" id="email" placeholder="Email">
             </input-wrapper>
             <input-wrapper type="password" id="password" placeholder="Password">
             </input-wrapper>
@@ -63,21 +63,19 @@ export class RegisterScreen extends HTMLElement{
             if(this._shadowRoot.getElementById('password').value===this._shadowRoot.getElementById('confirm-password').value){
             pass=CryptoJS.MD5(this._shadowRoot.getElementById('password').value).toString()}
             let user={
-            name:`${this._shadowRoot.getElementById('first-name').value} ${this._shadowRoot.getElementById('last-name').value}`,
-
+            firstName:this._shadowRoot.getElementById('first-name').value,
+            lastName:this._shadowRoot.getElementById('last-name').value,
             email:this._shadowRoot.getElementById('email').value,  
             password:pass
             }
-            console.log(user)
-            if(!user.name||!user.email){
-                alert("Please fill in every field.")
+            if(!(user.firstName&user.lastName&user.email)){
+                alert("Please fill in every field")
             }
-            else if(!user.password){
-                alert("Password don't match.")
+            else if(!user.pass){
+                alert("Password don't match")
             }
             else{   
                 addDocument(user)
-                alert("Sign Up Successful!")
             }
         })
     }
